@@ -1,6 +1,7 @@
 ---
 title: "About"
 date: 2022-07-26T21:07:29+08:00
+url: /about
 draft: true
 ---
 
