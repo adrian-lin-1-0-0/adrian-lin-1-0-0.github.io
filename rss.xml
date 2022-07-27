@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Adrian Lin</title><link>https://adrian-lin-1-0-0.github.io/</link><description>Adrian Lin's blogs.</description><generator>Hugo 0.101.0 https://gohugo.io/</generator><language>en</language><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright><lastBuildDate>Wed, 27 Jul 2022 17:43:18 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://adrian-lin-1-0-0.github.io/rss.xml"/><item><title>Start blog with HUGO</title><link>https://adrian-lin-1-0-0.github.io/2022/07/start_blog_with_hugo/</link><guid isPermaLink="true">https://adrian-lin-1-0-0.github.io/2022/07/start_blog_with_hugo/</guid><pubDate>Wed, 27 Jul 2022 22:17:25 +0800</pubDate><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright><description>&lt;p>&lt;img src="https://raw.githubusercontent.com/adrian-lin-1-0-0/blog-img/master/2022/07/27/hugo-main-page.webp" alt="">&lt;/p>
+&lt;h3 id="1-download-and-install-hugo">1. Download and Install HUGO&lt;/h3>
+&lt;p>Hugo currently provides pre-built binaries for the following:&lt;/p>
+&lt;ul>
+&lt;li>macOS (Darwin) for x64, i386, and ARM architectures&lt;/li>
+&lt;li>Windows&lt;/li>
+&lt;li>Linux&lt;/li>
+&lt;li>OpenBSD&lt;/li>
+&lt;li>FreeBSD&lt;/li>
+&lt;/ul>
+&lt;p>You can get the release distribution from &lt;a href="https://github.com/gohugoio/hugo/releases">HUGO&amp;rsquo;s github&lt;/a>&lt;/p>
+&lt;p>or using command line :&lt;/p>
+&lt;p>Snap (Linux)&lt;/p>
+&lt;blockquote>
+&lt;p>The extended version with Sass/SCSS support&lt;/p>
+&lt;/blockquote>
+&lt;pre tabindex="0">&lt;code>$ snap install hugo --channel=extended
+&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;p>The non-extended version without Sass/SCSS support&lt;/p>
+&lt;/blockquote>
+&lt;pre tabindex="0">&lt;code>$ snap install hugo
+&lt;/code>&lt;/pre>&lt;p>Homebrew (macOS)&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ brew install hugo
+&lt;/code>&lt;/pre>&lt;p>Chocokatey (Windows)&lt;/p>
+&lt;pre tabindex="0">&lt;code>$ choco install hugo -confirm
+&lt;/code>&lt;/pre>&lt;h3 id="2-create-a-new-site">2. Create a New Site&lt;/h3>
+&lt;p>Create a HUGO template&lt;/p>
+&lt;blockquote>
+&lt;p>new : Create new content for your site&lt;/p>
+&lt;/blockquote>
+&lt;pre tabindex="0">&lt;code>$ hugo new site blog
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>$ tree blog
+&lt;/code>&lt;/pre>&lt;p>You can see the project layout&lt;/p>
+&lt;pre tabindex="0">&lt;code>blog
+├── archetypes
+│   └── default.md
+├── config.toml
+├── content
+├── data
+├── layouts
+├── public
+├── static
+└── themes
+&lt;/code>&lt;/pre>&lt;p>Try to add a theme&lt;/p>
+&lt;blockquote>
+&lt;p>you can find HUGO themes in &lt;a href="https://themes.gohugo.io/">&lt;code>themes.gohugo.io&lt;/code>&lt;/a>&lt;/p>
+&lt;p>e.g. &lt;a href="https://themes.gohugo.io/themes/hugo-theme-meme/">&lt;code>hugo-theme-meme&lt;/code> &lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;pre tabindex="0">&lt;code>$ cd blog
+/blog $ git init // if you didn&amp;#39;t initialize your repository
+/blog $ git submodule add --depth 1 https://github.com/reuixiy/hugo-theme-meme.git themes/meme
+&lt;/code>&lt;/pre>&lt;p>Replace &lt;code>config.toml&lt;/code>with &lt;code>hugo-theme-meme&lt;/code> config example&lt;/p>
+&lt;pre tabindex="0">&lt;code>/blog $ rm config.toml &amp;amp;&amp;amp; cp themes/meme/config-examples/en/config.toml config.toml
+&lt;/code>&lt;/pre>&lt;p>Create a new post and the about page&lt;/p>
+&lt;pre tabindex="0">&lt;code>/blog $ hugo new &amp;#34;posts/hello-world.md&amp;#34;
+/blog $ hugo new &amp;#34;about/_index.md&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>Run the hugo server&lt;/p>
+&lt;blockquote>
+&lt;p>-D, &amp;ndash;buildDrafts : include content marked as draft&lt;/p>
+&lt;/blockquote>
+&lt;pre tabindex="0">&lt;code>/blog $ hugo server -D
+&lt;/code>&lt;/pre>&lt;p>Web Server is available at http://localhost:1313/&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/adrian-lin-1-0-0/blog-img/master/2022/07/27/hugo-theme-meme-hello.webp" alt="">&lt;/p>
+&lt;p>Let&amp;rsquo;s type something in &lt;code>/blog/content/posts/hello.world&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/adrian-lin-1-0-0/blog-img/master/2022/07/27/hugo-hello-world-with-Hamlet.webp" alt="">&lt;/p>
+&lt;p>After saving it, Hugo will rebuild the site&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/adrian-lin-1-0-0/blog-img/master/2022/07/27/hugo-hello-world-example.webp" alt="">&lt;/p></description><category domain="https://adrian-lin-1-0-0.github.io/categories/golang/">Golang</category><category domain="https://adrian-lin-1-0-0.github.io/categories/blog/">Blog</category><category domain="https://adrian-lin-1-0-0.github.io/tags/golang/">golang</category><category domain="https://adrian-lin-1-0-0.github.io/tags/hugo/">hugo</category></item></channel></rss>
