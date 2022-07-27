@@ -1,8 +1,9 @@
 ---
 title: "About"
 date: 2022-07-26T21:07:29+08:00
+author: adrian
 url: /about
-draft: true
+type: page
 ---
 
 ## Personal Information：
