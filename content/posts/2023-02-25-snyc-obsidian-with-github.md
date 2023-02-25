@@ -1,6 +1,5 @@
 ---
 title: "Sync Obsidian with Github"
-draft: true
 author: adrian
 type: post
 url: /2023/02/snyc-obsidian-with-github/
