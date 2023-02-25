@@ -1,4 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Adrian Lin</title><link>https://adrian-lin-1-0-0.github.io/</link><description>Adrian Lin's blogs.</description><generator>Hugo 0.110.0 https://gohugo.io/</generator><language>en</language><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright><lastBuildDate>Sat, 25 Feb 2023 14:44:20 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://adrian-lin-1-0-0.github.io/rss.xml"/><item><title>Start blog with HUGO</title><link>https://adrian-lin-1-0-0.github.io/2022/07/start_blog_with_hugo/</link><guid isPermaLink="true">https://adrian-lin-1-0-0.github.io/2022/07/start_blog_with_hugo/</guid><pubDate>Wed, 27 Jul 2022 22:17:25 +0800</pubDate><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright><description>&lt;p>&lt;img src="https://raw.githubusercontent.com/adrian-lin-1-0-0/blog-img/master/2022/07/27/hugo-main-page.webp" alt="">&lt;/p>
+<?xml version="1.0" encoding="utf-8"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Adrian Lin</title><link>https://adrian-lin-1-0-0.github.io/</link><description>Adrian Lin's blogs.</description><generator>Hugo 0.110.0 https://gohugo.io/</generator><language>en</language><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright><lastBuildDate>Sat, 25 Feb 2023 14:49:24 +0000</lastBuildDate><atom:link rel="self" type="application/rss+xml" href="https://adrian-lin-1-0-0.github.io/rss.xml"/><item><title>Sync Obsidian with Github</title><link>https://adrian-lin-1-0-0.github.io/2023/02/snyc-obsidian-with-github/</link><guid isPermaLink="true">https://adrian-lin-1-0-0.github.io/2023/02/snyc-obsidian-with-github/</guid><pubDate>Sat, 25 Feb 2023 21:14:28 +0800</pubDate><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright><description>&lt;p>先備知識&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.github.com/en/get-started/quickstart/hello-world">github&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://obsidian.md/">obsidian&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="linux-and-mac-os-x">Linux and Mac OS X&lt;/h2>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/adrian-lin-1-0-0/blog-img/master/2023/02/25/obsidian-graph-view-linux.webp" alt="">&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>安裝 git&lt;/p>
+&lt;p>Mac OS X (透過 Homebrew)&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">brew install git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Linux (Debian/Ubuntu)&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo apt-get install git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Clone the repository&lt;/p>
+&lt;p>進入存放&lt;code>repository&lt;/code>的&lt;code>folder&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> ~/repositories
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>clone&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git clone https://github.com/&lt;span class="o">{&lt;/span>your_username&lt;span class="o">}&lt;/span>/&lt;span class="o">{&lt;/span>your_repository&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>在&lt;code>Obsidian&lt;/code>開啟&lt;code>vault&lt;/code>,並選則該&lt;code>repository&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="android">Android&lt;/h2>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/adrian-lin-1-0-0/blog-img/master/2023/02/25/obsidian-graph-view.webp" alt="">&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>安裝Termux&lt;/p>
+&lt;p>&lt;a href="https://play.google.com/store/apps/details?id=com.termux&amp;amp;hl=zh_TW&amp;amp;gl=US">Google Play&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>更新&lt;code>pkg&lt;/code>資料庫 &amp;amp;&amp;amp; 升級已安裝軟體&lt;/p>
+&lt;pre tabindex="0">&lt;code>pkg update &amp;amp;&amp;amp; pkg upgrade -y
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>安裝&lt;code>git&lt;/code>的client端&lt;/p>
+&lt;pre tabindex="0">&lt;code>pkg install git
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>給&lt;code>Termux&lt;/code>訪問儲存空間的權限&lt;/p>
+&lt;pre tabindex="0">&lt;code>termux-setup-storage
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>進入&lt;code>shared&lt;/code>目錄&lt;/p>
+&lt;pre tabindex="0">&lt;code>cd /storage/shared
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>創建&lt;code>Obsidian&lt;/code>使用的目錄並進入&lt;/p>
+&lt;pre tabindex="0">&lt;code>mkdir obsidian
+cd obsidian
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>Clone the repository&lt;/p>
+&lt;p>因為在 &lt;code>android&lt;/code>手機上打字不那麼方便,我會將&lt;code>token&lt;/code>存在&lt;code>~/.git-credentials&lt;/code>.下次&lt;code>git pull&lt;/code>就不用再輸入一次.&lt;/p>
+&lt;blockquote>
+&lt;p>注意 : ~/.git-credentials 會以明文儲存,確保你沒有給你的 token 太大的權限&lt;/p>
+&lt;/blockquote>
+&lt;pre tabindex="0">&lt;code>git config --global credential.helper store
+&lt;/code>&lt;/pre>&lt;p>git clone&lt;/p>
+&lt;pre tabindex="0">&lt;code>git clone https://github.com/{your_username}/{your_repository}
+&lt;/code>&lt;/pre>&lt;p>Push &amp;amp;&amp;amp; Pull&lt;/p>
+&lt;p>因為已經儲存&lt;code>github token&lt;/code>了,&lt;code>pull&lt;/code>跟&lt;code>push&lt;/code>時不用再輸入一次&lt;code>username&lt;/code>跟&lt;code>password&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code>git pull
+&lt;/code>&lt;/pre>&lt;p>Push&lt;/p>
+&lt;pre tabindex="0">&lt;code>git push
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;li>
+&lt;p>在&lt;code>Obsidian&lt;/code>開啟&lt;code>vault&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://raw.githubusercontent.com/adrian-lin-1-0-0/blog-img/master/2023/02/25/open-folder-as-vault.webp" alt="">&lt;/p>
+&lt;/li>
+&lt;/ol></description><category domain="https://adrian-lin-1-0-0.github.io/categories/note/">Note</category><category domain="https://adrian-lin-1-0-0.github.io/categories/obsidian/">Obsidian</category><category domain="https://adrian-lin-1-0-0.github.io/categories/github/">Github</category><category domain="https://adrian-lin-1-0-0.github.io/tags/note/">note</category><category domain="https://adrian-lin-1-0-0.github.io/tags/github/">github</category><category domain="https://adrian-lin-1-0-0.github.io/tags/obsidian/">obsidian</category></item><item><title>Start blog with HUGO</title><link>https://adrian-lin-1-0-0.github.io/2022/07/start_blog_with_hugo/</link><guid isPermaLink="true">https://adrian-lin-1-0-0.github.io/2022/07/start_blog_with_hugo/</guid><pubDate>Wed, 27 Jul 2022 22:17:25 +0800</pubDate><copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright><description>&lt;p>&lt;img src="https://raw.githubusercontent.com/adrian-lin-1-0-0/blog-img/master/2022/07/27/hugo-main-page.webp" alt="">&lt;/p>
 &lt;h3 id="1-download-and-install-hugo">1. Download and Install HUGO&lt;/h3>
 &lt;p>Hugo currently provides pre-built binaries for the following:&lt;/p>
 &lt;ul>
