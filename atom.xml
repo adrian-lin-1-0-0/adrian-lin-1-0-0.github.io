@@ -1,4 +1,130 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><title type="text">Adrian Lin</title><subtitle type="html">Adrian Lin's blogs.</subtitle><updated>2023-02-25T14:49:24+00:00</updated><id>https://adrian-lin-1-0-0.github.io/</id><link rel="alternate" type="text/html" href="https://adrian-lin-1-0-0.github.io/"/><link rel="self" type="application/atom+xml" href="https://adrian-lin-1-0-0.github.io/atom.xml"/><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><generator uri="https://gohugo.io/" version="0.110.0">Hugo</generator><entry><title type="text">Sync Obsidian with Github</title><link rel="alternate" type="text/html" href="https://adrian-lin-1-0-0.github.io/2023/02/snyc-obsidian-with-github/"/><id>https://adrian-lin-1-0-0.github.io/2023/02/snyc-obsidian-with-github/</id><updated>2023-02-25T14:49:21+00:00</updated><published>2023-02-25T21:14:28+08:00</published><author><uri>https://adrian-lin-1-0-0.github.io/</uri></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">先備知識
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><title type="text">Adrian Lin</title><subtitle type="html">Adrian Lin's blogs.</subtitle><updated>2023-02-26T01:51:25+00:00</updated><id>https://adrian-lin-1-0-0.github.io/</id><link rel="alternate" type="text/html" href="https://adrian-lin-1-0-0.github.io/"/><link rel="self" type="application/atom+xml" href="https://adrian-lin-1-0-0.github.io/atom.xml"/><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><generator uri="https://gohugo.io/" version="0.110.0">Hugo</generator><entry><title type="text">Wifi Sniffer</title><link rel="alternate" type="text/html" href="https://adrian-lin-1-0-0.github.io/2023/02/wifi-sniffer/"/><id>https://adrian-lin-1-0-0.github.io/2023/02/wifi-sniffer/</id><updated>2023-02-26T01:51:23+00:00</updated><published>2023-02-26T08:55:45+08:00</published><author><uri>https://adrian-lin-1-0-0.github.io/</uri></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">關於咖啡廳的 wifi router 咖啡廳wifi router的常見的攻擊 - WiFi Sniffing
+WiFi Sniffing:是指使用特殊的軟體工具來監聽傳輸在 Wi-Fi 網絡上的封包,包括帳號密碼這些敏感資訊.
+要進行WiFi Sniffing,通常使用以下方法:
+監聽 Wi-Fi 流量 假冒 Wi-Fi AP 我們將使用scapy
+https://scapy.net/
+Scapy is a powerful interactive packet manipulation program.
+1 pip3 install scapy 監聽 Wi-Fi 流量 使用scapy監聽wlan0 interface上的流量, 如果是 tcp 就輸出摘要.</summary><content type="html">&lt;style>
+.lntable{
+max-height: 50em;
+}
+&lt;/style>
+&lt;h2 id="關於咖啡廳的-wifi-router">關於咖啡廳的 wifi router&lt;/h2>
+&lt;p>咖啡廳wifi router的常見的攻擊 - &lt;code>WiFi Sniffing&lt;/code>&lt;/p>
+&lt;blockquote>
+&lt;p>WiFi Sniffing:是指使用特殊的軟體工具來監聽傳輸在 Wi-Fi 網絡上的封包,包括帳號密碼這些敏感資訊.&lt;/p>
+&lt;/blockquote>
+&lt;p>要進行&lt;code>WiFi Sniffing&lt;/code>,通常使用以下方法:&lt;/p>
+&lt;ul>
+&lt;li>監聽 Wi-Fi 流量&lt;/li>
+&lt;li>假冒 Wi-Fi AP&lt;/li>
+&lt;/ul>
+&lt;p>我們將使用&lt;code>scapy&lt;/code>&lt;br>
+&lt;a href="https://scapy.net/">https://scapy.net/&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>Scapy is a powerful interactive packet manipulation program.&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">pip3&lt;/span> &lt;span class="n">install&lt;/span> &lt;span class="n">scapy&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="監聽-wi-fi-流量">監聽 Wi-Fi 流量&lt;/h2>
+&lt;p>使用&lt;code>scapy&lt;/code>監聽&lt;code>wlan0&lt;/code> interface上的流量,
+如果是 tcp 就輸出摘要.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">scapy.all&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="o">*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">packet_handler&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pkt&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">pkt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">haslayer&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">TCP&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pkt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">summary&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">sniff&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">iface&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;wlan0&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">prn&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">packet_handler&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="假冒-wi-fi-ap">假冒 Wi-Fi AP&lt;/h2>
+&lt;p>使用&lt;code>scapy.sendp&lt;/code>在無窮迴圈中broadcasts &lt;code>Beacon frame&lt;/code>&lt;/p>
+&lt;blockquote>
+&lt;p>Beacon frame : Beacon frame is one of the management frames in IEEE 802.11 based WLANs. It contains all the information about the network. Beacon frames are transmitted periodically, they serve to announce the presence of a wireless LAN and to synchronise the members of the service set. - &lt;a href="https://en.wikipedia.org/wiki/Beacon_frame">wikipedia&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">scapy.all&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="o">*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">packet_handler&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pkt&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">pkt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">haslayer&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">TCP&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pkt&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">summary&lt;/span>&lt;span class="p">())&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">start_fake_ap&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ap_name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;Free WiFi&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ap_mac&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;00:11:22:33:44:55&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">beacon&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Dot11Beacon&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">cap&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;ESS+privacy&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">essid&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Dot11Elt&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ID&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;SSID&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">info&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">ap_name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">len&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ap_name&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">dsset&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Dot11Elt&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ID&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;DSset&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">info&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="se">\x01&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">rsn&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Dot11Elt&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ID&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;RSNinfo&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">info&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="se">\x01\x00&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span> &lt;span class="c1">#RSN Version 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="se">\x00\x0f\xac\x02&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span> &lt;span class="c1">#Group Cipher Suite : 00-0f-ac TKIP&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="se">\x02\x00&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span> &lt;span class="c1">#2 Pairwise Cipher Suites (next two lines)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="se">\x00\x0f\xac\x04&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span> &lt;span class="c1">#AES Cipher&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="se">\x00\x0f\xac\x02&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span> &lt;span class="c1">#TKIP Cipher&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="se">\x01\x00&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span> &lt;span class="c1">#1 Authentication Key Managment Suite (line below)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="se">\x00\x0f\xac\x02&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span> &lt;span class="c1">#Pre-Shared Key&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">frame&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">RadioTap&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">beacon&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">essid&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">dsset&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">rsn&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="kc">True&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">sendp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">frame&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">iface&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;wlan0&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">sniff&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">iface&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;wlan0&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">prn&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">packet_handler&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">start_fake_ap&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></content><category scheme="https://adrian-lin-1-0-0.github.io/tags/python/" term="python" label="python"/><category scheme="https://adrian-lin-1-0-0.github.io/tags/wifi/" term="wifi" label="wifi"/></entry><entry><title type="text">Sync Obsidian with Github</title><link rel="alternate" type="text/html" href="https://adrian-lin-1-0-0.github.io/2023/02/snyc-obsidian-with-github/"/><id>https://adrian-lin-1-0-0.github.io/2023/02/snyc-obsidian-with-github/</id><updated>2023-02-26T01:51:23+00:00</updated><published>2023-02-25T21:14:28+08:00</published><author><uri>https://adrian-lin-1-0-0.github.io/</uri></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">先備知識
 github obsidian Linux and Mac OS X 安裝 git
 Mac OS X (透過 Homebrew)
 1 brew install git Linux (Debian/Ubuntu)
@@ -108,7 +234,7 @@ cd obsidian
 &lt;p>在&lt;code>Obsidian&lt;/code>開啟&lt;code>vault&lt;/code>&lt;/p>
 &lt;p>&lt;img src="https://raw.githubusercontent.com/adrian-lin-1-0-0/blog-img/master/2023/02/25/open-folder-as-vault.webp" alt="">&lt;/p>
 &lt;/li>
-&lt;/ol></content><category scheme="https://adrian-lin-1-0-0.github.io/categories/note/" term="Note" label="Note"/><category scheme="https://adrian-lin-1-0-0.github.io/categories/obsidian/" term="Obsidian" label="Obsidian"/><category scheme="https://adrian-lin-1-0-0.github.io/categories/github/" term="Github" label="Github"/><category scheme="https://adrian-lin-1-0-0.github.io/tags/note/" term="note" label="note"/><category scheme="https://adrian-lin-1-0-0.github.io/tags/github/" term="github" label="github"/><category scheme="https://adrian-lin-1-0-0.github.io/tags/obsidian/" term="obsidian" label="obsidian"/></entry><entry><title type="text">Start blog with HUGO</title><link rel="alternate" type="text/html" href="https://adrian-lin-1-0-0.github.io/2022/07/start_blog_with_hugo/"/><id>https://adrian-lin-1-0-0.github.io/2022/07/start_blog_with_hugo/</id><updated>2023-02-25T14:49:21+00:00</updated><published>2022-07-27T22:17:25+08:00</published><author><uri>https://adrian-lin-1-0-0.github.io/</uri></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. Download and Install HUGO Hugo currently provides pre-built binaries for the following:
+&lt;/ol></content><category scheme="https://adrian-lin-1-0-0.github.io/categories/note/" term="Note" label="Note"/><category scheme="https://adrian-lin-1-0-0.github.io/categories/obsidian/" term="Obsidian" label="Obsidian"/><category scheme="https://adrian-lin-1-0-0.github.io/categories/github/" term="Github" label="Github"/><category scheme="https://adrian-lin-1-0-0.github.io/tags/note/" term="note" label="note"/><category scheme="https://adrian-lin-1-0-0.github.io/tags/github/" term="github" label="github"/><category scheme="https://adrian-lin-1-0-0.github.io/tags/obsidian/" term="obsidian" label="obsidian"/></entry><entry><title type="text">Start blog with HUGO</title><link rel="alternate" type="text/html" href="https://adrian-lin-1-0-0.github.io/2022/07/start_blog_with_hugo/"/><id>https://adrian-lin-1-0-0.github.io/2022/07/start_blog_with_hugo/</id><updated>2023-02-26T01:51:23+00:00</updated><published>2022-07-27T22:17:25+08:00</published><author><uri>https://adrian-lin-1-0-0.github.io/</uri></author><rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">1. Download and Install HUGO Hugo currently provides pre-built binaries for the following:
 macOS (Darwin) for x64, i386, and ARM architectures Windows Linux OpenBSD FreeBSD You can get the release distribution from HUGO&amp;rsquo;s github
 or using command line :
 Snap (Linux)</summary><content type="html">&lt;p>&lt;img src="https://raw.githubusercontent.com/adrian-lin-1-0-0/blog-img/master/2022/07/27/hugo-main-page.webp" alt="">&lt;/p>
